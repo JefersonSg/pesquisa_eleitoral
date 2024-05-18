@@ -6,7 +6,6 @@
     box-sizing: border-box;
     cursor: pointer;
     width: calc(100% - 52px);
-    border-radius: 8px;
   }
   .infos_candidato {
     display: flex;
