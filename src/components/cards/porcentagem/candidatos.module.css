@@ -1,0 +1,59 @@
+.candidato_container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.foto_candidato {
+    border-radius: 6px;
+}
+
+.nome {
+    font-size: 14px;
+    font-weight: 500;
+}
+.container_porcentagem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.porcentagem_grafico {
+    width: 150px;
+    height: 4px;
+    background: #D0DFE4;
+    border-radius: 8px;
+}
+
+.porcentagem {
+    display: block;
+    width: 50%;
+    height: 4px;
+    background-color: #538ADD;
+    border-radius: 8px;
+    z-index: 100;
+    animation: carregando_porcentagem .5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+}
+
+.porcentagem_escrita {
+    font-size: 12px;
+    font-weight: 700;
+    color: #626A75;
+}
+
+.votos {
+    font-size: 10px;
+    font-weight: 400;
+    color: #626A75;
+}
+
+
+@keyframes carregando_porcentagem {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 50%;
+    }
+}
