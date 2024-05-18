@@ -3,7 +3,7 @@ import PorcentagemCandidatos from './candidatos';
 export default async function CardPorcentagem() {
   return (
     <main className={'card_porcentagem'}>
-      <h1 className={'cabeçalho'}>Candidatos</h1>
+      <h1 className={'cabecalho'}>Parcial dos candidatos</h1>
       <PorcentagemCandidatos
         image="/candidatos/paulinho.png"
         name="Paulinho da refrigeração"

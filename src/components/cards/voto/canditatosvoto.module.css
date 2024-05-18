@@ -1,0 +1,51 @@
+.candidato_container {
+    margin-bottom: 16px;
+    align-items: center;
+    margin-left: 32px;
+    width: max-content;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: calc(100% - 52px);
+    border-radius: 8px;
+  }
+  .infos_candidato {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    border-radius: 8px;
+  }
+.nome {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .foto_candidato {
+    border-radius: 6px;
+  }
+
+  .seta {
+    width: auto;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all .2s;
+  }
+
+  .candidato_container.ativo .foto_candidato {
+    box-shadow:  0 0 0 2px white;
+  }
+  .candidato_container.ativo .infos_candidato,
+    .infos_candidato:hover {
+    background-color: #538ADD;
+  }
+
+  .candidato_container.ativo .nome,
+    .infos_candidato:hover .nome {
+    color: white !important;
+  }
+
+  .candidato_container.ativo {
+    border-bottom: 1px solid #C6D4E8;
+    padding-bottom: 16px;
+  }

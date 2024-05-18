@@ -1,0 +1,57 @@
+
+.formulario {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+.formulario label {
+    font-size: 14px;
+    color: #626A75;
+    font-weight: 700;
+}
+
+.genero,
+.distrito {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 350px;
+}
+.genero select,
+.distrito select {
+    border-radius:999px;
+    height: 34px;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid #B4C0D1;
+    color: #626A75;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.idade div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.idade div label{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.botao_confirm {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    background: linear-gradient(#0066FF 0%, #003D99 100%);
+    height: 34px;
+    width: 115px;
+    border-radius: 32px;
+    align-self: center;
+}
