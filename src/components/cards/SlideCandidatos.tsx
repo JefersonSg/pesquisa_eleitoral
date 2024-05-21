@@ -13,6 +13,8 @@ import CardPorcentagem from './porcentagem/card-porcentagem';
 import MediaIdadeCard from './Idade/MediaIdade';
 
 const SlideCandidatos = () => {
+  const [ativo, setAtivo] = React.useState('');
+
   return (
     <div className="container">
       <Swiper
@@ -26,12 +28,18 @@ const SlideCandidatos = () => {
           disableOnInteraction: true
         }}
         modules={[Pagination, Autoplay]}
+        onSlideChange={(e) => {
+          setAtivo('');
+          if (e.activeIndex === 1) {
+            setAtivo('Paulinho da refrigeração');
+          }
+        }}
       >
         <SwiperSlide>
           <CardPorcentagem />
         </SwiperSlide>
         <SwiperSlide>
-          <MediaIdadeCard />
+          <MediaIdadeCard ativo={ativo} setAtivo={setAtivo} />
         </SwiperSlide>
       </Swiper>
     </div>

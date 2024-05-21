@@ -4,8 +4,13 @@ import React from 'react';
 import MediaIdadeCandidatos from './MediaIdadeCandidatos';
 import styles from './canditatosCard.module.css';
 
-const MediaIdadeCard = () => {
-  const [ativo, setAtivo] = React.useState('');
+const MediaIdadeCard = ({
+  ativo,
+  setAtivo
+}: {
+  ativo: string;
+  setAtivo: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <div className={`card ${styles.margin}`}>
       <h1 className="cabecalho">Média de idade dos eleitores</h1>
