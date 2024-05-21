@@ -3,13 +3,13 @@
 
 .candidato_container {
     align-items: center;
-    margin-left: 32px;
     width: max-content;
     box-sizing: border-box;
     cursor: pointer;
     width: calc(100% - 52px);
     box-sizing: border-box;
-  margin-bottom: 16px;
+    margin-bottom: 16px;
+    margin: 0 auto;
   }
   .candidatos_div {
     display: flex;
