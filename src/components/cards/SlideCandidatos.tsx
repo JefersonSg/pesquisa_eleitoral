@@ -12,10 +12,12 @@ import './SlideCandidatos.css';
 import CardPorcentagem from './porcentagem/card-porcentagem';
 import MediaIdadeCard from './Idade/MediaIdade';
 import MediaGeneroCard from './genero/MediaGenero';
+import MediaCidadesCard from './Cidade/MediaCidades';
 
 const SlideCandidatos = () => {
   const [ativo, setAtivo] = React.useState('');
   const [ativoGenero, setAtivoGenero] = React.useState('');
+  const [ativoCidade, setAtivoCidade] = React.useState('');
 
   return (
     <div className="container">
@@ -24,11 +26,11 @@ const SlideCandidatos = () => {
         slidesPerView={1}
         pagination={true}
         navigation={true}
-        autoplay={{
-          delay: 7000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: true
-        }}
+        // autoplay={{
+        //   delay: 7000,
+        //   pauseOnMouseEnter: true,
+        //   disableOnInteraction: true
+        // }}
         modules={[Pagination, Autoplay]}
         onSlideChange={(e) => {
           setAtivo('');
@@ -41,6 +43,9 @@ const SlideCandidatos = () => {
           }
         }}
       >
+        <SwiperSlide>
+          <MediaCidadesCard ativo={ativoCidade} setAtivo={setAtivoCidade} />
+        </SwiperSlide>
         <SwiperSlide>
           <CardPorcentagem />
         </SwiperSlide>

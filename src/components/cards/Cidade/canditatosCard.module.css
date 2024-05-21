@@ -74,7 +74,6 @@
     position: relative;
     top: -10px;
     box-shadow: 0 0 5px 0px #888da090;
-
   }
   .texto_title {
     font-size: 14px;
@@ -104,11 +103,29 @@
     font-size: 14px;
   }
   .estatistica1  span{
-    color: #538ADD;
+    color: #18D215;
   }
   .estatistica2 span{
-    color: #F412D0;
+    color: #04CCB4;
   }
   .estatistica3 span{
-    color: #844BCE;
+    color: #4CABF0;
+  }
+  .estatistica4 span{
+    color: #0B6FB8;
+  }
+  .estatistica5 span{
+    color: #958A2A;
+  }
+  .estatistica6 span{
+    color: #AF874C;
+  }
+  .estatistica7 span{
+    color: #309E69;
+  }
+  .estatistica8 span{
+    color: #B3530D;
+  }
+  .estatistica9 span{
+    color: #CA0000;
   }
