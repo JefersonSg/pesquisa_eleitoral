@@ -3,9 +3,9 @@
 import React from 'react';
 import styles from './canditatosCard.module.css';
 import Image from 'next/image';
-import GraficoRosquinha from '@/components/graficos/GraficoRosquinha';
+import GraficoRosquinhaGenero from '@/components/graficos/GraficoRosquinhaGenero';
 
-const MediaIdadeCandidatos = ({
+const MediaGeneroCandidatos = ({
   image,
   name,
   ativo,
@@ -52,28 +52,20 @@ const MediaIdadeCandidatos = ({
       {ativo === name && (
         <div className={styles.informações_candidato}>
           <p className={styles.texto_title}>Gráfico Média de idades</p>
-          <GraficoRosquinha
-            idade1={0}
-            idade2={0}
-            idade3={0}
-            idade4={0}
-            idade5={0}
+          <GraficoRosquinhaGenero
+            estatistica1={0}
+            estatistica2={0}
+            estatistica3={0}
           />
           <div className={styles.valores_votos}>
-            <p className={styles.idade1}>
-              16 a 24 anos: <span>{200}</span>
+            <p className={styles.estatistica1}>
+              Homem: <span>{200}</span>
             </p>
-            <p className={styles.idade2}>
-              25 a 34 anos: <span>{200}</span>
+            <p className={styles.estatistica2}>
+              Mulher: <span>{200}</span>
             </p>
-            <p className={styles.idade3}>
-              35 a 44 anos: <span>{200}</span>
-            </p>
-            <p className={styles.idade4}>
-              45 a 59 anos: <span>{200}</span>
-            </p>
-            <p className={styles.idade5}>
-              60 ou mais: <span>{200}</span>
+            <p className={styles.estatistica3}>
+              Outros: <span>{200}</span>
             </p>
           </div>
         </div>
@@ -82,4 +74,4 @@ const MediaIdadeCandidatos = ({
   );
 };
 
-export default MediaIdadeCandidatos;
+export default MediaGeneroCandidatos;

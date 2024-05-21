@@ -1,4 +1,6 @@
 .margin {
+  padding-bottom: 12px;
+
 }
 
 .candidato_container {
@@ -8,15 +10,16 @@
     cursor: pointer;
     width: calc(100% - 52px);
     box-sizing: border-box;
-    margin-bottom: 16px;
     margin: 0 auto;
+
   }
   .candidatos_div {
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: space-between;
     align-self: flex-start;
-    gap: 16px;
+    gap: 32px;
   }
   .infos_candidato {
     display: flex;
@@ -64,11 +67,10 @@
 
   .candidato_container.ativo {
     border-bottom: 1px solid #C6D4E8;
-    padding-bottom: 16px;
   }
   .informações_candidato {
     background-color: #E5EDF9;
-    padding: 12px 0;
+    padding: 16px 0 12px 0;
     border-radius: 0 0 12px 12px;
     position: relative;
     top: -10px;

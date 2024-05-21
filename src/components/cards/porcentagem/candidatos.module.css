@@ -5,6 +5,7 @@
   align-items: center;
   align-self: center;
   width: 90%;
+  justify-content: center;
 }
 
 .foto_candidato {
@@ -20,12 +21,15 @@
   align-items: center;
   gap: 12px;
 }
-
+.infos {
+  width: 80%;
+}
 .porcentagem_grafico {
-  width: 150px;
+  width: 85%;
   height: 4px;
   background: #d0dfe4;
   border-radius: 8px;
+  max-width: 270px;
 }
 
 .porcentagem {

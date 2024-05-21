@@ -29,8 +29,11 @@ const Formulario = ({
         <div className={styles.distrito}>
           <label htmlFor="distrito">Aonde você mora?</label>
           <select name="distrito" id="distrito">
-            <option value="Santo antônio de pádua">
-              Santo antônio de pádua
+            <option value="" selected style={{ display: 'none' }}>
+              Selecione a Cidade / Distrito
+            </option>
+            <option value="Santo Antônio de Pádua">
+              Santo Antônio de Pádua
             </option>
             <option value="Baltazar">Baltazar</option>
             <option value="Campelo">Campelo</option>
@@ -74,6 +77,27 @@ const Formulario = ({
             <option value="mulher">Mulher</option>
             <option value="outro">Outro</option>
             <option value="outro">Prefiro não dizer</option>
+          </select>
+        </div>
+        <div className={styles.distrito}>
+          <label htmlFor="distrito">
+            Em quem você não votaria de jeito nenhum?
+          </label>
+          <select name="distrito" id="distrito">
+            <option value="" selected style={{ display: 'none' }}>
+              Selecione um candidato
+            </option>
+
+            <option value="Paulinho da refrigeração">
+              Paulinho da refrigeração
+            </option>
+            <option value="Josias quintal">Josias quintal</option>
+            <option value="Béto da farmacia">Béto da farmacia</option>
+            <option value="Leonardo da agricultura">
+              Leonardo da agricultura
+            </option>
+            <option value="Rogério Machado">Rogério Machado</option>
+            <option value="">Nenhuma das opções</option>
           </select>
         </div>
         <button
