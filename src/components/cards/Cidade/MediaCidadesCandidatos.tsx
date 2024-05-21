@@ -55,31 +55,31 @@ const MediaCidadesCandidatos = ({
           <GraficoCidades estatistica1={0} estatistica2={0} estatistica3={0} />
           <div className={styles.valores_votos}>
             <p className={styles.estatistica1}>
-              Santo Antônio de Pádua: <span>{200}</span>
+              Santo Antônio de Pádua <span>{200}</span>
             </p>
             <p className={styles.estatistica2}>
-              Baltazar: <span>{200}</span>
+              Baltazar <span>{200}</span>
             </p>
             <p className={styles.estatistica3}>
-              Campelo: <span>{200}</span>
+              Campelo <span>{200}</span>
             </p>
             <p className={styles.estatistica4}>
-              Ibitiguaçu: <span>{200}</span>
+              Ibitiguaçu <span>{200}</span>
             </p>
             <p className={styles.estatistica5}>
-              Monte Alegre: <span>{200}</span>
+              Monte Alegre <span>{200}</span>
             </p>
             <p className={styles.estatistica5}>
-              Marangatu: <span>{200}</span>
+              Marangatu <span>{200}</span>
             </p>
             <p className={styles.estatistica6}>
-              Paraoquena: <span>{200}</span>
+              Paraoquena <span>{200}</span>
             </p>
             <p className={styles.estatistica7}>
-              Santa Cruz: <span>{200}</span>
+              Santa Cruz <span>{200}</span>
             </p>
             <p className={styles.estatistica8}>
-              São Pedro de Alcântara: <span>{200}</span>
+              São Pedro de Alcântara <span>{200}</span>
             </p>
           </div>
         </div>

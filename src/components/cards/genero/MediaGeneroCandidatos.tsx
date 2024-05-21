@@ -59,13 +59,13 @@ const MediaGeneroCandidatos = ({
           />
           <div className={styles.valores_votos}>
             <p className={styles.estatistica1}>
-              Homem: <span>{200}</span>
+              Homem <span>{200}</span>
             </p>
             <p className={styles.estatistica2}>
-              Mulher: <span>{200}</span>
+              Mulher <span>{200}</span>
             </p>
             <p className={styles.estatistica3}>
-              Outros: <span>{200}</span>
+              Outros <span>{200}</span>
             </p>
           </div>
         </div>

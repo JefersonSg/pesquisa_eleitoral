@@ -61,19 +61,19 @@ const MediaIdadeCandidatos = ({
           />
           <div className={styles.valores_votos}>
             <p className={styles.idade1}>
-              16 a 24 anos: <span>{200}</span>
+              16 a 24 anos <span>{200}</span>
             </p>
             <p className={styles.idade2}>
-              25 a 34 anos: <span>{200}</span>
+              25 a 34 anos <span>{200}</span>
             </p>
             <p className={styles.idade3}>
-              35 a 44 anos: <span>{200}</span>
+              35 a 44 anos <span>{200}</span>
             </p>
             <p className={styles.idade4}>
-              45 a 59 anos: <span>{200}</span>
+              45 a 59 anos <span>{200}</span>
             </p>
             <p className={styles.idade5}>
-              60 ou mais: <span>{200}</span>
+              60 ou mais <span>{200}</span>
             </p>
           </div>
         </div>
