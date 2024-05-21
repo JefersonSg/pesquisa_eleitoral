@@ -1,8 +1,8 @@
 import PorcentagemCandidatos from './candidatos';
 
-export default async function CardPorcentagem() {
+export default function CardPorcentagem() {
   return (
-    <main className={'card_porcentagem'}>
+    <main className={'card'}>
       <h1 className={'cabecalho'}>Parcial dos candidatos</h1>
       <PorcentagemCandidatos
         image="/candidatos/paulinho.png"

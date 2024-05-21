@@ -3,7 +3,8 @@
   gap: 8px;
   margin-bottom: 16px;
   align-items: center;
-  padding-left: 32px;
+  align-self: center;
+  width: 90%;
 }
 
 .foto_candidato {

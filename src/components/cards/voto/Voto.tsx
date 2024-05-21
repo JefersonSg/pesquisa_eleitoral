@@ -6,7 +6,7 @@ import CandidatosVoto from './candidatos_voto';
 const Voto = () => {
   const [ativo, setAtivo] = React.useState('');
   return (
-    <div className="card_porcentagem">
+    <div className="card">
       <h1 className="cabecalho">
         Em quem você votaria se a eleição fosse hoje ?
       </h1>

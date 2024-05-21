@@ -1,12 +1,15 @@
 
 .formulario {
-    margin-top: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 8px;
+    background-color: #E5EDF9;
+    padding: 16px 12px 12px 12px;
+    position: relative;
+    top: -4px;
+    border-radius: 0 0 12px 12px;
 }
 .formulario label {
     font-size: 14px;

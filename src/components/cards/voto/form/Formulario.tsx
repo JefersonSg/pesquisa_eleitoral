@@ -5,7 +5,11 @@ import styles from './form-infos.module.css';
 import ConfirmLottie from '@/components/lottie/Confirm';
 import AwaitLottie from '@/components/lottie/Await';
 
-const Formulario = () => {
+const Formulario = ({
+  setAtivo
+}: {
+  setAtivo: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
 
@@ -14,9 +18,11 @@ const Formulario = () => {
       setTimeout(() => {
         setSaved(true);
         setIsLoading(false);
+        scroll({ top: 0 });
       }, 3000);
     }
   }, [isLoading, saved]);
+
   return (
     <>
       <form className={styles.formulario}>
@@ -96,6 +102,7 @@ const Formulario = () => {
               onClick={() => {
                 setSaved(false);
                 setIsLoading(false);
+                setAtivo('');
               }}
             >
               Ok

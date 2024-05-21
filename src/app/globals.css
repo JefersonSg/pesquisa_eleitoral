@@ -39,18 +39,19 @@ img {
   max-width: 100%;
 }
 
-.card_porcentagem {
+.card {
   width: 90%;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
   border-radius: 12px;
-  margin-top: 16px;
+  margin-top: 4px;
   box-shadow: 0 6px 7px 1px #00000025;
   max-width: 500px;
+  min-height: 390px;
+  box-sizing: border-box;
 }
 
 .cabecalho {

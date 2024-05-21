@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './candidatos.module.css';
 
-export default async function PorcentagemCandidatos({
+export default function PorcentagemCandidatos({
   image,
   name,
   percentage,
