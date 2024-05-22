@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import HeaderContainer from '@/components/header/Header';
 import { typeFirst } from '@/functions/fonts/fonts';
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Pesquisa Eleitoral Pádua 2024',
