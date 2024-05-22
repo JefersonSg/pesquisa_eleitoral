@@ -51,7 +51,7 @@ const MediaIdadeCandidatos = ({
       </div>
       {ativo === name && (
         <div className={styles.informações_candidato}>
-          <p className={styles.texto_title}>Gráfico Média de idades</p>
+          <p className={styles.texto_title}>Média de idades</p>
           <GraficoRosquinha
             idade1={0}
             idade2={0}

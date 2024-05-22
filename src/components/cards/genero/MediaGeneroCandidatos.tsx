@@ -51,7 +51,7 @@ const MediaGeneroCandidatos = ({
       </div>
       {ativo === name && (
         <div className={styles.informações_candidato}>
-          <p className={styles.texto_title}>Gráfico Média de idades</p>
+          <p className={styles.texto_title}>Votos por gênero</p>
           <GraficoRosquinhaGenero
             estatistica1={0}
             estatistica2={0}

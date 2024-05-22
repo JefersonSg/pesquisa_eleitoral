@@ -51,7 +51,7 @@ const MediaCidadesCandidatos = ({
       </div>
       {ativo === name && (
         <div className={styles.informações_candidato}>
-          <p className={styles.texto_title}>Gráfico Média de idades</p>
+          <p className={styles.texto_title}>Votos por Cidade / Distrito</p>
           <GraficoCidades estatistica1={0} estatistica2={0} estatistica3={0} />
           <div className={styles.valores_votos}>
             <p className={styles.estatistica1}>

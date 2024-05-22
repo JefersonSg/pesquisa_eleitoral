@@ -27,11 +27,9 @@ const Formulario = ({
     <>
       <form className={styles.formulario}>
         <div className={styles.distrito}>
-          <label htmlFor="distrito">Aonde você mora?</label>
+          <label htmlFor="distrito">Aonde você mora? Cidade / Distrito</label>
           <select name="distrito" id="distrito">
-            <option value="" selected style={{ display: 'none' }}>
-              Selecione a Cidade / Distrito
-            </option>
+            <option value="" selected style={{ display: 'none' }}></option>
             <option value="Santo Antônio de Pádua">
               Santo Antônio de Pádua
             </option>
@@ -71,6 +69,7 @@ const Formulario = ({
           </div>
         </div>
         <div className={styles.genero}>
+          <option value="" selected style={{ display: 'none' }}></option>
           <label htmlFor="genero">Qual o seu gênero</label>
           <select name="genero" id="genero">
             <option value="homem">Homem</option>
