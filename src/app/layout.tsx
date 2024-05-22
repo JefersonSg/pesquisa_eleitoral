@@ -17,13 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8457030371423171"
-          crossOrigin="anonymous"
-        ></script>
-      </Head>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8457030371423171"
+        crossOrigin="anonymous"
+      ></script>
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-8457030371423171"
+      ></meta>
       <body className={`${typeFirst.className}`}>
         <HeaderContainer />
         {children}
