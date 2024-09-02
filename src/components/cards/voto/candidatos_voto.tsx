@@ -48,7 +48,7 @@ const CandidatosVoto = ({
           height={12}
         />
       </div>
-      {ativo === name && <Formulario setAtivo={setAtivo} />}
+      {ativo === name && <Formulario nomeVoto={name} setAtivo={setAtivo} />}
     </div>
   );
 };
