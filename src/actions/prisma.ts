@@ -152,6 +152,19 @@ export async function getVotosByIdade() {
       };
     });
 
+    votosPorIdade.sort((a, b) => {
+      const totalVotosA: any = Object.values(a.votosIdade).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+      const totalVotosB: any = Object.values(b.votosIdade).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+
+      return totalVotosB - totalVotosA;
+    });
+
     return {
       votosPorIdade
     };
@@ -192,6 +205,18 @@ export async function getVotosByGenero() {
       };
     });
 
+    votosPorGenero.sort((a, b) => {
+      const totalVotosA: any = Object.values(a.votosGenero).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+      const totalVotosB: any = Object.values(b.votosGenero).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+
+      return totalVotosB - totalVotosA;
+    });
     return {
       votosPorGenero
     };
@@ -238,6 +263,18 @@ export async function getVotosByCidade() {
       };
     });
 
+    votosPorCidade.sort((a, b) => {
+      const totalVotosA: any = Object.values(a.votosCidade).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+      const totalVotosB: any = Object.values(b.votosCidade).reduce(
+        (sum: any, votos: any) => sum + votos,
+        0
+      );
+
+      return totalVotosB - totalVotosA;
+    });
     return {
       votosPorCidade
     };
