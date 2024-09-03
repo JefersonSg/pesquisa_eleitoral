@@ -4,17 +4,20 @@ import React from 'react';
 import styles from './canditatosvoto.module.css';
 import Image from 'next/image';
 import Formulario from './form/Formulario';
+import { type candidatos } from './Voto';
 
 const CandidatosVoto = ({
   image,
   name,
   ativo,
-  setAtivo
+  setAtivo,
+  candidatos
 }: {
   image: string;
   name: string;
   ativo: string;
   setAtivo: React.Dispatch<React.SetStateAction<string>>;
+  candidatos: candidatos[];
 }) => {
   return (
     <div
@@ -48,7 +51,13 @@ const CandidatosVoto = ({
           height={12}
         />
       </div>
-      {ativo === name && <Formulario nomeVoto={name} setAtivo={setAtivo} />}
+      {ativo === name && (
+        <Formulario
+          nomeVoto={name}
+          setAtivo={setAtivo}
+          candidatos={candidatos}
+        />
+      )}
     </div>
   );
 };

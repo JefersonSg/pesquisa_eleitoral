@@ -1,39 +1,27 @@
+import { type votosCandidatos } from '../SlideCandidatos';
 import PorcentagemCandidatos from './candidatos';
+import React from 'react';
 
-export default function CardPorcentagem() {
+export default function CardPorcentagem({
+  votos
+}: {
+  votos: votosCandidatos[];
+}) {
   return (
     <main className={'card'}>
       <h1 className={'cabecalho'}>Parcial dos candidatos</h1>
-      <PorcentagemCandidatos
-        image="/candidatos/paulinho.png"
-        name="Paulinho da refrigeração"
-        percentage="51"
-        votes="3255"
-      />
-      <PorcentagemCandidatos
-        image="/candidatos/josias.png"
-        name="Josias quintal"
-        percentage="51"
-        votes="1532"
-      />
-      <PorcentagemCandidatos
-        image="/candidatos/beto.png"
-        name="Béto da farmacia"
-        percentage="51"
-        votes="889"
-      />
-      <PorcentagemCandidatos
-        image="/candidatos/rogerio.png"
-        name="Rogério Machado"
-        percentage="51"
-        votes="784"
-      />
-      <PorcentagemCandidatos
-        image="/candidatos/leonardo.png"
-        name="Leonardo da agricultura"
-        percentage="51"
-        votes="154"
-      />
+
+      {votos.map((candidato) => {
+        return (
+          <PorcentagemCandidatos
+            key={candidato.nome}
+            image={`/candidatos/${candidato.nome}.png`}
+            name={candidato.nome}
+            percentage={candidato.porcentagem}
+            votes={candidato.votos}
+          />
+        );
+      })}
     </main>
   );
 }

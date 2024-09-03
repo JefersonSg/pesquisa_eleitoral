@@ -8,10 +8,15 @@ datasource db {
 }
 
 model Votos {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  voto String
-  cidade String
-  idade String
-  genero String
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  cidade   String
+  genero   String
+  idade    String
   rejeicao String
+  voto     String
+}
+
+model Candidatos {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  nome String
 }

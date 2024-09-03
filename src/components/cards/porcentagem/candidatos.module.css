@@ -34,12 +34,12 @@
 
 .porcentagem {
   display: block;
-  width: 50%;
+  width: 0%;
   height: 4px;
   background-color: #538add;
   border-radius: 8px;
   z-index: 100;
-  animation: carregando_porcentagem 0.5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+  transition: all 2s;
 }
 
 .porcentagem_escrita {

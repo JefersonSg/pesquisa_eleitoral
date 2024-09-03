@@ -10,7 +10,7 @@ export default function PorcentagemCandidatos({
   image: string;
   name: string;
   percentage: string;
-  votes: string;
+  votes: number;
 }) {
   return (
     <div className={styles.candidato_container}>
@@ -25,7 +25,10 @@ export default function PorcentagemCandidatos({
         <p className={styles.nome}>{name}</p>
         <div className={styles.container_porcentagem}>
           <div className={styles.porcentagem_grafico}>
-            <span className={styles.porcentagem}></span>
+            <span
+              className={styles.porcentagem}
+              style={{ width: `${percentage}%` }}
+            ></span>
           </div>
           <p className={styles.porcentagem_escrita}>{percentage}%</p>
         </div>

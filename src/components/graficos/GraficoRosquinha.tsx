@@ -20,8 +20,8 @@ const GraficoRosquinha = ({
   const data = {
     datasets: [
       {
-        label: 'Número de votos',
-        data: [300, 50, 100, 20, 7],
+        label: `Número de votos`,
+        data: [idade1, idade2, idade3, idade4, idade5],
         backgroundColor: [
           '#18d215',
           '#8CC70D',

@@ -3,48 +3,33 @@
 import React from 'react';
 import MediaIdadeCandidatos from './MediaIdadeCandidatos';
 import styles from './canditatosCard.module.css';
+import { type VotosPorIdade } from '@/app/page';
 
 const MediaIdadeCard = ({
   ativo,
-  setAtivo
+  setAtivo,
+  votosPorIdade
 }: {
   ativo: string;
   setAtivo: React.Dispatch<React.SetStateAction<string>>;
+  votosPorIdade: VotosPorIdade[];
 }) => {
   return (
     <div className={`card ${styles.margin}`}>
       <h1 className="cabecalho">Média de idade dos eleitores</h1>
       <div className={styles.candidatos_div}>
-        <MediaIdadeCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/paulinho.png"
-          name="Paulinho da refrigeração"
-        />
-        <MediaIdadeCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/josias.png"
-          name="Josias quintal"
-        />
-        <MediaIdadeCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/beto.png"
-          name="Béto da farmacia"
-        />
-        <MediaIdadeCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/rogerio.png"
-          name="Rogério Machado"
-        />
-        <MediaIdadeCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/leonardo.png"
-          name="Leonardo da agricultura"
-        />
+        {votosPorIdade?.map((candidato) => {
+          return (
+            <MediaIdadeCandidatos
+              key={candidato.nome}
+              ativo={ativo}
+              votosIdade={candidato.votosIdade}
+              setAtivo={setAtivo}
+              image={`/candidatos/${candidato.nome}.png`}
+              name={candidato.nome}
+            />
+          );
+        })}
       </div>
     </div>
   );

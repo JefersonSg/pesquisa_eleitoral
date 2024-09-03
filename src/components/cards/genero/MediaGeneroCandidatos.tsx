@@ -4,17 +4,20 @@ import React from 'react';
 import styles from './canditatosCard.module.css';
 import Image from 'next/image';
 import GraficoRosquinhaGenero from '@/components/graficos/GraficoRosquinhaGenero';
+import { type VotosPorGenero } from '@/app/page';
 
 const MediaGeneroCandidatos = ({
   image,
   name,
   ativo,
-  setAtivo
+  setAtivo,
+  votosPorGenero
 }: {
   image: string;
   name: string;
   ativo: string;
   setAtivo: React.Dispatch<React.SetStateAction<string>>;
+  votosPorGenero: VotosPorGenero;
 }) => {
   return (
     <div
@@ -39,7 +42,7 @@ const MediaGeneroCandidatos = ({
         />
         <div className={styles.infos}>
           <p className={styles.nome}>{name}</p>
-          <p className={styles.media}>28 anos</p>
+          <p className={styles.media}></p>
         </div>
         <Image
           className={styles.seta}
@@ -53,19 +56,19 @@ const MediaGeneroCandidatos = ({
         <div className={styles.informações_candidato}>
           <p className={styles.texto_title}>Votos por gênero</p>
           <GraficoRosquinhaGenero
-            estatistica1={0}
-            estatistica2={0}
-            estatistica3={0}
+            estatistica1={votosPorGenero.votosGenero.homem}
+            estatistica2={votosPorGenero.votosGenero.mulher}
+            estatistica3={votosPorGenero.votosGenero.outros}
           />
           <div className={styles.valores_votos}>
             <p className={styles.estatistica1}>
-              Homem <span>{200}</span>
+              Homem <span>{votosPorGenero.votosGenero.homem}</span>
             </p>
             <p className={styles.estatistica2}>
-              Mulher <span>{200}</span>
+              Mulher <span>{votosPorGenero.votosGenero.mulher}</span>
             </p>
             <p className={styles.estatistica3}>
-              Outros <span>{200}</span>
+              Outros <span>{votosPorGenero.votosGenero.outros}</span>
             </p>
           </div>
         </div>

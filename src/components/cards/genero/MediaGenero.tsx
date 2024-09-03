@@ -3,48 +3,33 @@
 import React from 'react';
 import styles from './canditatosCard.module.css';
 import MediaGeneroCandidatos from './MediaGeneroCandidatos';
+import { type VotosPorGenero } from '@/app/page';
 
 const MediaGeneroCard = ({
   ativo,
-  setAtivo
+  setAtivo,
+  votosPorGenero
 }: {
   ativo: string;
   setAtivo: React.Dispatch<React.SetStateAction<string>>;
+  votosPorGenero: VotosPorGenero[];
 }) => {
   return (
     <div className={`card ${styles.margin}`}>
       <h1 className="cabecalho">Gênero dos eleitores</h1>
       <div className={styles.candidatos_div}>
-        <MediaGeneroCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/paulinho.png"
-          name="Paulinho da refrigeração"
-        />
-        <MediaGeneroCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/josias.png"
-          name="Josias quintal"
-        />
-        <MediaGeneroCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/beto.png"
-          name="Béto da farmacia"
-        />
-        <MediaGeneroCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/rogerio.png"
-          name="Rogério Machado"
-        />
-        <MediaGeneroCandidatos
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/leonardo.png"
-          name="Leonardo da agricultura"
-        />
+        {votosPorGenero.map((candidato) => {
+          return (
+            <MediaGeneroCandidatos
+              key={candidato.nome}
+              ativo={ativo}
+              setAtivo={setAtivo}
+              votosPorGenero={candidato}
+              image={`/candidatos/${candidato.nome}.png`}
+              name={candidato.nome}
+            />
+          );
+        })}
       </div>
     </div>
   );

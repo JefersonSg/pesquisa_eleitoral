@@ -17,7 +17,7 @@ const GraficoRosquinhaGenero = ({
     datasets: [
       {
         label: 'Número de votos',
-        data: [300, 100, 10],
+        data: [estatistica1, estatistica2, estatistica3],
         backgroundColor: ['#538ADD', '#F412D0', '#844BCE'],
         hoverOffset: 8
       }

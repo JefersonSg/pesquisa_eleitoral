@@ -4,7 +4,12 @@ import React from 'react';
 import CandidatosVoto from './candidatos_voto';
 import styles from './canditatosvoto.module.css';
 
-const Voto = () => {
+export interface candidatos {
+  id: string;
+  nome: string;
+}
+
+const Voto = ({ candidatos }: { candidatos: candidatos[] }) => {
   const [ativo, setAtivo] = React.useState('');
   return (
     <div className="card">
@@ -12,39 +17,22 @@ const Voto = () => {
         Em quem você votaria se a eleição fosse hoje ?
       </h1>
       <div className={styles.candidatos_div}>
-        <CandidatosVoto
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/paulinho.png"
-          name="Paulinho da refrigeração"
-        />
-        <CandidatosVoto
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/beto.png"
-          name="Béto da farmacia"
-        />
-        <CandidatosVoto
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/josias.png"
-          name="Josias quintal"
-        />
-        <CandidatosVoto
-          ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/leonardo.png"
-          name="Leonardo da agricultura"
-        />
+        {candidatos.map((candidato) => {
+          return (
+            <CandidatosVoto
+              key={candidato.id}
+              ativo={ativo}
+              candidatos={candidatos}
+              setAtivo={setAtivo}
+              image={`/candidatos/${candidato.nome}.png`}
+              name={candidato.nome}
+            />
+          );
+        })}
 
         <CandidatosVoto
           ativo={ativo}
-          setAtivo={setAtivo}
-          image="/candidatos/rogerio.png"
-          name="Rogério Machado"
-        />
-        <CandidatosVoto
-          ativo={ativo}
+          candidatos={candidatos}
           setAtivo={setAtivo}
           image="/candidatos/nulo.png"
           name="Branco/Nulo"

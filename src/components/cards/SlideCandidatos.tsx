@@ -14,8 +14,33 @@ import MediaIdadeCard from './Idade/MediaIdade';
 import MediaGeneroCard from './genero/MediaGenero';
 import MediaCidadesCard from './Cidade/MediaCidades';
 import CardPorcentagemRejeicao from './rejeicao/card-porcentagem-rejeicao';
+import {
+  type VotosPorCidade,
+  type VotosPorGenero,
+  type VotosPorIdade
+} from '@/app/page';
 
-const SlideCandidatos = () => {
+export interface votosCandidatos {
+  nome: string;
+  votos: number;
+  porcentagem: string;
+}
+
+const SlideCandidatos = ({
+  votos,
+  votosTotais,
+  votosPorIdade,
+  votosPorGenero,
+  votosPorCidade,
+  votosPorRejeicoes
+}: {
+  votos: votosCandidatos[];
+  votosTotais: number;
+  votosPorIdade: VotosPorIdade[];
+  votosPorGenero: VotosPorGenero[];
+  votosPorCidade: VotosPorCidade[];
+  votosPorRejeicoes: votosCandidatos[];
+}) => {
   const [ativo, setAtivo] = React.useState('');
   const [ativoGenero, setAtivoGenero] = React.useState('');
   const [ativoCidade, setAtivoCidade] = React.useState('');
@@ -49,19 +74,31 @@ const SlideCandidatos = () => {
         }}
       >
         <SwiperSlide>
-          <CardPorcentagem />
+          <CardPorcentagem votos={votos} />
         </SwiperSlide>
         <SwiperSlide>
-          <MediaIdadeCard ativo={ativo} setAtivo={setAtivo} />
+          <MediaIdadeCard
+            ativo={ativo}
+            setAtivo={setAtivo}
+            votosPorIdade={votosPorIdade}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <MediaGeneroCard ativo={ativoGenero} setAtivo={setAtivoGenero} />
+          <MediaGeneroCard
+            ativo={ativoGenero}
+            setAtivo={setAtivoGenero}
+            votosPorGenero={votosPorGenero}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <MediaCidadesCard ativo={ativoCidade} setAtivo={setAtivoCidade} />
+          <MediaCidadesCard
+            ativo={ativoCidade}
+            setAtivo={setAtivoCidade}
+            votosPorCidade={votosPorCidade}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <CardPorcentagemRejeicao />
+          <CardPorcentagemRejeicao votos={votosPorRejeicoes} />
         </SwiperSlide>
       </Swiper>
     </div>

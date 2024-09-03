@@ -6,17 +6,39 @@ import { PolarArea } from 'react-chartjs-2';
 const GraficoCidades = ({
   estatistica1,
   estatistica2,
-  estatistica3
+  estatistica3,
+  estatistica4,
+  estatistica5,
+  estatistica6,
+  estatistica7,
+  estatistica8,
+  estatistica9
 }: {
   estatistica1: number;
   estatistica2: number;
   estatistica3: number;
+  estatistica4: number;
+  estatistica5: number;
+  estatistica6: number;
+  estatistica7: number;
+  estatistica8: number;
+  estatistica9: number;
 }) => {
   const data = {
     datasets: [
       {
         label: 'Número de votos',
-        data: [150, 50, 100, 70, 44, 73, 98, 87, 53],
+        data: [
+          estatistica1,
+          estatistica2,
+          estatistica3,
+          estatistica4,
+          estatistica5,
+          estatistica6,
+          estatistica7,
+          estatistica8,
+          estatistica9
+        ],
         backgroundColor: [
           '#18D215',
           '#04CCB4',

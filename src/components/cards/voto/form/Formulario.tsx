@@ -6,14 +6,17 @@ import ConfirmLottie from '@/components/lottie/Confirm';
 import AwaitLottie from '@/components/lottie/Await';
 import { createNewVote } from '@/actions/prisma';
 import Preencha from './Preencha';
-import JaVotou from './Preencha copy';
+import JaVotou from './jaVotou';
+import { type candidatos } from '../Voto';
 
 const Formulario = ({
   setAtivo,
-  nomeVoto
+  nomeVoto,
+  candidatos
 }: {
   setAtivo: React.Dispatch<React.SetStateAction<string>>;
   nomeVoto: string;
+  candidatos: candidatos[];
 }) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
@@ -54,7 +57,6 @@ const Formulario = ({
         scroll({ top: 0 });
       }, 3000);
     }
-    console.log(response);
   }
 
   return (
@@ -174,7 +176,6 @@ const Formulario = ({
             <option value="homem">Homem</option>
             <option value="mulher">Mulher</option>
             <option value="outro">Outro</option>
-            <option value="outro">Prefiro não dizer</option>
           </select>
         </div>
         <div className={styles.distrito}>
@@ -193,15 +194,17 @@ const Formulario = ({
             <option value="" style={{ display: 'none' }}>
               selecione
             </option>
-            <option value="Paulinho da refrigeração">
-              Paulinho da refrigeração
-            </option>
-            <option value="Josias quintal">Josias quintal</option>
-            <option value="Béto da farmacia">Béto da farmacia</option>
-            <option value="Leonardo da agricultura">
-              Leonardo da agricultura
-            </option>
-            <option value="Rogério Machado">Rogério Machado</option>
+            {candidatos.map((candidato, index) => {
+              if (candidato.nome === nomeVoto) {
+                return '';
+              }
+              return (
+                <option key={candidato.id + index} value={candidato.nome}>
+                  {candidato.nome}
+                </option>
+              );
+            })}
+
             <option value="">Nenhuma das opções</option>
           </select>
         </div>
