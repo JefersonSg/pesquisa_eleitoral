@@ -44,6 +44,19 @@ const SlideCandidatos = ({
   const [ativo, setAtivo] = React.useState('');
   const [ativoGenero, setAtivoGenero] = React.useState('');
   const [ativoCidade, setAtivoCidade] = React.useState('');
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(true);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="container">
@@ -53,7 +66,7 @@ const SlideCandidatos = ({
         pagination={true}
         navigation={true}
         autoplay={{
-          delay: 7000,
+          delay: scrolled ? 25000 : 12000,
           pauseOnMouseEnter: true,
           disableOnInteraction: true
         }}
