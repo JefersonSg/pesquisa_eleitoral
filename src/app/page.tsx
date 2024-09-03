@@ -59,7 +59,6 @@ export default async function Home() {
     votosPorCidade: VotosPorCidade[];
   };
 
-  console.log(votosTotaisRejeicoes?.resultadoRejeicao);
   return (
     <main className={styles.main}>
       <SlideCandidatos
@@ -70,7 +69,7 @@ export default async function Home() {
         votosPorCidade={votosPorCidade?.votosPorCidade ?? []}
         votosPorRejeicoes={votosTotaisRejeicoes?.resultadoRejeicao ?? []}
       />
-      <Voto candidatos={candidatos || []} />
+      <Voto candidatos={candidatos ?? []} />
     </main>
   );
 }
