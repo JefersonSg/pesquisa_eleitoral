@@ -6,7 +6,23 @@ import { typeFirst } from '@/functions/fonts/fonts';
 export const metadata: Metadata = {
   title: 'Pesquisa Eleitoral Pádua 2024',
   description:
-    'Insira seu voto em seu candidato, Veja a parcial dos candidatos a prefeito de Pádua, e outras estatísticas'
+    'Insira seu voto em seu candidato, Veja a parcial dos candidatos a prefeito de Pádua, e outras estatísticas',
+  keywords: [
+    'Pesquisa eleitoral Pádua',
+    'Santo antônio de Pádua',
+    'Pesquisa eleitoral 2024 Santo Antônio de Pádua'
+  ],
+  icons:
+    'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capapesquisa.png',
+  openGraph: {
+    url: 'https://pesquisaeleitoral.vercel.app/',
+    siteName: 'Pesquisa Eleitoral Pádua 2024',
+    title: 'Pesquisa Eleitoral Pádua 2024',
+    description:
+      'Insira seu voto em seu candidato, Veja a parcial dos candidatos a prefeito de Pádua, e outras estatísticas',
+    images:
+      'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capapesquisa.png'
+  }
 };
 
 export default function RootLayout({
