@@ -15,7 +15,7 @@ export default function CardPorcentagem({
     resultado: votosCandidatos[];
     votosTotais: number;
   }>({
-    queryKey: ['votos', votos.length],
+    queryKey: ['votos'],
     queryFn: async () => {
       return (await getVotos()) as unknown as {
         resultado: votosCandidatos[];

@@ -8,6 +8,7 @@ import { createNewVote } from '@/actions/prisma';
 import Preencha from './Preencha';
 import JaVotou from './jaVotou';
 import { type candidatos } from '../Voto';
+import { useQuery } from '@tanstack/react-query';
 
 const Formulario = ({
   setAtivo,
@@ -27,6 +28,9 @@ const Formulario = ({
   const [rejeicao, setRejeicao] = React.useState('');
   const [preencha, setPreencha] = React.useState(false);
   const [jaVotou, setJaVotou] = React.useState(false);
+  const { refetch } = useQuery({
+    queryKey: ['votos']
+  });
 
   async function onSubmit() {
     if (!cidade || !idade || !genero || !rejeicao) {
@@ -51,9 +55,10 @@ const Formulario = ({
       return;
     }
     if (response.message) {
+      setIsLoading(false);
       setTimeout(() => {
         setSaved(true);
-        setIsLoading(false);
+        void refetch();
         scroll({ top: 0 });
       }, 3000);
     }
