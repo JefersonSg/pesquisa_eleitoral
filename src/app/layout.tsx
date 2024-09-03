@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import HeaderContainer from '@/components/header/Header';
 import { typeFirst } from '@/functions/fonts/fonts';
+import Providers from '@/shared/providers/providers';
 
 export const metadata: Metadata = {
   title: 'Pesquisa Eleitoral Pádua 2024',
@@ -43,7 +44,7 @@ export default function RootLayout({
       ></meta>
       <body className={`${typeFirst.className}`}>
         <HeaderContainer />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 'use server';
 import { type VotosPorCidade } from '@/app/page';
+import { type votosCandidatos } from '@/components/cards/SlideCandidatos';
 import { PrismaClient } from '@prisma/client';
 import { cookies } from 'next/headers';
 
@@ -73,7 +74,9 @@ export async function getVotos() {
       };
     });
 
-    const resultadoOrdenado = result.sort((a, b) => b.votos - a.votos);
+    const resultadoOrdenado: votosCandidatos[] = result.sort(
+      (a, b) => b.votos - a.votos
+    );
 
     return { resultado: resultadoOrdenado, votosTotais: votosTotais?.length };
   } catch (error) {

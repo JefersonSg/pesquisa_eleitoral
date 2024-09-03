@@ -36,10 +36,10 @@
   display: block;
   width: 0%;
   height: 4px;
-  background-color: #538add;
   border-radius: 8px;
   z-index: 100;
   transition: all 2s;
+  background-color: #538add;
 }
 
 .porcentagem_escrita {
