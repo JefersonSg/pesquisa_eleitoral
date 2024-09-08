@@ -1,0 +1,50 @@
+.nao_votou {
+    background-color: rgba(180, 180, 180, 0.7);
+    padding: 18px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 600;
+    position: absolute;
+    margin: 0 auto;
+    min-width: 250px;
+    height: max-content;
+    min-height: 150px !important;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+
+  .shake {
+    display: inline-block;
+    animation: shake 0.5s ease-in-out;
+    animation-iteration-count: infinite; /* Remover ou ajustar para quantas vezes repetir */
+  }
+
+  .whatsappButton {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.whatsappButton:hover {
+    background-color: #1EBB61;
+}

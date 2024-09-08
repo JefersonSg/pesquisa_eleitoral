@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import styles from './style.module.css';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -19,6 +20,11 @@ import {
   type VotosPorGenero,
   type VotosPorIdade
 } from '@/app/page';
+import Image from 'next/image';
+import { getCookie } from '@/actions/getCookie';
+import { getVotos } from '@/actions/prisma';
+import { setCookieVoted } from '@/actions/setCookie';
+import { Router } from 'next/router';
 
 export interface votosCandidatos {
   nome: string;
@@ -45,6 +51,8 @@ const SlideCandidatos = ({
   const [ativoGenero, setAtivoGenero] = React.useState('');
   const [ativoCidade, setAtivoCidade] = React.useState('');
   const [scrolled, setScrolled] = React.useState(false);
+  const [voted, setVoted] = React.useState(false);
+  const [shared, setShared] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +66,27 @@ const SlideCandidatos = ({
     };
   }, []);
 
+  async function GetVoto() {
+    const vote = await getCookie({ nameCookie: 'voted' });
+
+    console.log(vote);
+
+    if (vote) {
+      setVoted(true);
+    }
+  }
+  async function GetShared() {
+    const shared = await getCookie({ nameCookie: 'shared' });
+
+    if (shared) {
+      setShared(true);
+    }
+  }
+  React.useEffect(() => {
+    void GetVoto();
+    void GetShared();
+  }, []);
+
   return (
     <div className="container">
       <Swiper
@@ -65,54 +94,125 @@ const SlideCandidatos = ({
         slidesPerView={1}
         pagination={true}
         navigation={true}
-        autoplay={{
-          delay: scrolled ? 25000 : 12000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: true
-        }}
+        // autoplay={{
+        //   delay: scrolled ? 25000 : 12000,
+        //   pauseOnMouseEnter: true,
+        //   disableOnInteraction: true
+        // }}
+        autoplay={false}
         modules={[Pagination, Autoplay]}
         onSlideChange={(e) => {
           setAtivo('');
           setAtivoGenero('');
           setAtivoCidade('');
           if (e.activeIndex === 1) {
-            setAtivo('Paulinho da refrigeração');
+            setAtivo(votos[0].nome);
           }
           if (e.activeIndex === 2) {
-            setAtivoGenero('Paulinho da refrigeração');
+            setAtivoGenero(votos[0].nome);
           }
           if (e.activeIndex === 3) {
-            setAtivoCidade('Paulinho da refrigeração');
+            setAtivoCidade(votos[0].nome);
           }
         }}
       >
-        <SwiperSlide>
-          <CardPorcentagem votos={votos} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MediaIdadeCard
-            ativo={ativo}
-            setAtivo={setAtivo}
-            votosPorIdade={votosPorIdade}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MediaGeneroCard
-            ativo={ativoGenero}
-            setAtivo={setAtivoGenero}
-            votosPorGenero={votosPorGenero}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MediaCidadesCard
-            ativo={ativoCidade}
-            setAtivo={setAtivoCidade}
-            votosPorCidade={votosPorCidade}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardPorcentagemRejeicao votos={votosPorRejeicoes} />
-        </SwiperSlide>
+        {voted && shared ? (
+          <>
+            <SwiperSlide>
+              <CardPorcentagem votos={votos} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <MediaIdadeCard
+                ativo={ativo}
+                setAtivo={setAtivo}
+                votosPorIdade={votosPorIdade}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <MediaGeneroCard
+                ativo={ativoGenero}
+                setAtivo={setAtivoGenero}
+                votosPorGenero={votosPorGenero}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <MediaCidadesCard
+                ativo={ativoCidade}
+                setAtivo={setAtivoCidade}
+                votosPorCidade={votosPorCidade}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardPorcentagemRejeicao votos={votosPorRejeicoes} />
+            </SwiperSlide>
+            +
+          </>
+        ) : (
+          <SwiperSlide key={'01254'}>
+            {!voted && (
+              <div className={`card ${styles.nao_votou}`}>
+                <p>
+                  Para ver a porcentagem dos candidatos
+                  <br /> deixe o seu voto
+                </p>
+                <Image
+                  className={styles.shake}
+                  alt="Imagem de cadeado"
+                  src={'/imagens/block.png'}
+                  width={50}
+                  height={50}
+                />
+              </div>
+            )}
+            {!shared && (
+              <div className={`card ${styles.nao_votou}`}>
+                <p>
+                  Para ver a porcentagem dos candidatos
+                  <br /> Compartilhe no Whatsapp
+                </p>
+                <Image
+                  className={styles.shake}
+                  alt="Imagem de cadeado"
+                  src={'/imagens/whatsapp.svg'}
+                  width={50}
+                  height={50}
+                />
+                <button
+                  className={styles.whatsappButton}
+                  onClick={(e) => {
+                    if (navigator.share) {
+                      navigator
+                        .share({
+                          title: 'Pesquisa Eleitoral',
+                          text: 'Venha conferir e deixar o seu voto na pesquisa eleitoral.',
+                          url: 'https://pesquisaeleitoralpadua.vercel.app'
+                        })
+                        .then(() => {
+                          console.log('Compartilhamento realizado com sucesso');
+                          setTimeout(() => {
+                            void setCookieVoted({
+                              cookieName: 'shared',
+                              cookieValue: 'true'
+                            });
+                            window.location.reload();
+                          }, 2000);
+                        })
+                        .catch((error) => {
+                          console.log('Erro ao compartilhar:', error);
+                        });
+                    } else {
+                      console.log(
+                        'API de compartilhamento não suportada pelo navegador.'
+                      );
+                    }
+                  }}
+                >
+                  Compartilhar
+                </button>
+              </div>
+            )}
+          </SwiperSlide>
+        )}
       </Swiper>
     </div>
   );

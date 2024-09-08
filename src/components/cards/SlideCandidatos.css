@@ -2,6 +2,7 @@
     position: relative;
     width: max-content;
     max-width: 100%;
+    min-width: 100%;
     margin-top: 16px;
 }
 
@@ -9,4 +10,5 @@
     max-width: 100%;
     padding-bottom: 36px;
     box-sizing: border-box;
+    min-height: 200px;
 }
