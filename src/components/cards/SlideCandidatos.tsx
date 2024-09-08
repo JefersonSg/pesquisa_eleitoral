@@ -22,9 +22,7 @@ import {
 } from '@/app/page';
 import Image from 'next/image';
 import { getCookie } from '@/actions/getCookie';
-import { getVotos } from '@/actions/prisma';
 import { setCookieVoted } from '@/actions/setCookie';
-import { Router } from 'next/router';
 
 export interface votosCandidatos {
   nome: string;
@@ -94,12 +92,11 @@ const SlideCandidatos = ({
         slidesPerView={1}
         pagination={true}
         navigation={true}
-        // autoplay={{
-        //   delay: scrolled ? 25000 : 12000,
-        //   pauseOnMouseEnter: true,
-        //   disableOnInteraction: true
-        // }}
-        autoplay={false}
+        autoplay={{
+          delay: scrolled ? 25000 : 12000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: true
+        }}
         modules={[Pagination, Autoplay]}
         onSlideChange={(e) => {
           setAtivo('');
