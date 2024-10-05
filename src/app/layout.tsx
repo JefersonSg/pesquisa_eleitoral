@@ -13,16 +13,14 @@ export const metadata: Metadata = {
     'Santo antônio de Palma',
     'Pesquisa eleitoral 2024 Santo Antônio de Palma'
   ],
-  icons:
-    'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capapesquisa.png',
+  icons: 'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capasite2.png',
   openGraph: {
     url: 'https://pesquisaeleitoral.vercel.app/',
     siteName: 'Pesquisa Eleitoral Palma 2024',
     title: 'Pesquisa Eleitoral Palma 2024',
     description:
       'Insira seu voto em seu candidato, Veja a parcial dos candidatos a prefeito de Palma, e outras estatísticas',
-    images:
-      'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capapesquisa.png'
+    images: 'https://mayse-bucket-site.s3.sa-east-1.amazonaws.com/capasite2.png'
   }
 };
 
