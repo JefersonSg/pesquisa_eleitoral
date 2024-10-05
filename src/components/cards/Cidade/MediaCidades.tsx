@@ -25,7 +25,7 @@ const MediaCidadesCard = ({
               ativo={ativo}
               setAtivo={setAtivo}
               votosPorCidade={candidato}
-              image={`/candidatos/${candidato.nome}.png`}
+              image={`/candidatos/${candidato.nome}.jpg`}
               name={candidato.nome}
             />
           );

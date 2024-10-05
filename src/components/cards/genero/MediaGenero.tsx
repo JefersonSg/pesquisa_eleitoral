@@ -25,7 +25,7 @@ const MediaGeneroCard = ({
               ativo={ativo}
               setAtivo={setAtivo}
               votosPorGenero={candidato}
-              image={`/candidatos/${candidato.nome}.png`}
+              image={`/candidatos/${candidato.nome}.jpg`}
               name={candidato.nome}
             />
           );

@@ -32,7 +32,7 @@ export default function CardPorcentagem({
         return (
           <PorcentagemCandidatos
             key={candidato.nome}
-            image={`/candidatos/${candidato.nome}.png`}
+            image={`/candidatos/${candidato.nome}.jpg`}
             name={candidato.nome}
             percentage={candidato.porcentagem}
             votes={candidato.votos}

@@ -161,7 +161,7 @@ const SlideCandidatos = ({
                 />
               </div>
             )}
-            {!shared && (
+            {!shared && voted && (
               <div className={`card ${styles.nao_votou}`}>
                 <p>
                   Para ver a porcentagem dos candidatos

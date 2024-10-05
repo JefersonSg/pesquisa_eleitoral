@@ -25,7 +25,7 @@ const MediaIdadeCard = ({
               ativo={ativo}
               votosIdade={candidato.votosIdade}
               setAtivo={setAtivo}
-              image={`/candidatos/${candidato.nome}.png`}
+              image={`/candidatos/${candidato.nome}.jpg`}
               name={candidato.nome}
             />
           );
