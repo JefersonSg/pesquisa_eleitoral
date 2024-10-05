@@ -56,52 +56,14 @@ const MediaCidadesCandidatos = ({
         <div className={styles.informações_candidato}>
           <p className={styles.texto_title}>Votos por Cidade / Distrito</p>
           <GraficoCidades
-            estatistica1={votosPorCidade.votosCidade['Santo Antônio de Pádua']}
-            estatistica2={votosPorCidade.votosCidade.Baltazar}
-            estatistica3={votosPorCidade.votosCidade.Campelo}
-            estatistica4={votosPorCidade.votosCidade['Ibitiguaçu']}
-            estatistica5={votosPorCidade.votosCidade['Monte Alegre']}
-            estatistica6={votosPorCidade.votosCidade.Marangatu}
-            estatistica7={votosPorCidade.votosCidade.Paraoquena}
-            estatistica8={votosPorCidade.votosCidade['Santa Cruz']}
-            estatistica9={votosPorCidade.votosCidade['São Pedro de Alcântara']}
+            estatistica1={votosPorCidade.votosCidade.Palma}
+            estatistica2={votosPorCidade.votosCidade.Itaperuçu}
+            estatistica3={votosPorCidade.votosCidade.Cisneiros}
           />
           <div className={styles.valores_votos}>
             <p className={styles.estatistica1}>
-              Santo Antônio de Pádua
-              <span>
-                {votosPorCidade.votosCidade['Santo Antônio de Pádua']}
-              </span>
-            </p>
-            <p className={styles.estatistica2}>
-              Baltazar <span>{votosPorCidade.votosCidade.Baltazar}</span>
-            </p>
-            <p className={styles.estatistica3}>
-              Campelo <span>{votosPorCidade.votosCidade.Campelo}</span>
-            </p>
-            <p className={styles.estatistica4}>
-              Ibitiguaçu <span>{votosPorCidade.votosCidade['Ibitiguaçu']}</span>
-            </p>
-            <p className={styles.estatistica5}>
-              Monte Alegre{' '}
-              <span> {votosPorCidade.votosCidade['Monte Alegre']}</span>
-            </p>
-            <p className={styles.estatistica6}>
-              Marangatu <span> {votosPorCidade.votosCidade.Marangatu}</span>
-            </p>
-            <p className={styles.estatistica7}>
-              Paraoquena <span> {votosPorCidade.votosCidade.Paraoquena}</span>
-            </p>
-            <p className={styles.estatistica8}>
-              Santa Cruz{' '}
-              <span> {votosPorCidade.votosCidade['Santa Cruz']}</span>
-            </p>
-            <p className={styles.estatistica9}>
-              São Pedro de Alcântara{' '}
-              <span>
-                {' '}
-                {votosPorCidade.votosCidade['São Pedro de Alcântara']}
-              </span>
+              Palma
+              <span>{votosPorCidade.votosCidade.Palma}</span>
             </p>
           </div>
         </div>

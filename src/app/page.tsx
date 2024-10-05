@@ -33,15 +33,9 @@ export interface VotosPorGenero {
 export interface VotosPorCidade {
   nome: string;
   votosCidade: {
-    'Santo Antônio de Pádua': number;
-    Baltazar: number;
-    Campelo: number;
-    Ibitiguaçu: number;
-    'Monte Alegre': number;
-    Marangatu: number;
-    Paraoquena: number;
-    'Santa Cruz': number;
-    'São Pedro de Alcântara': number;
+    Palma: number;
+    Itaperuçu: number;
+    Cisneiros: number;
   };
 }
 

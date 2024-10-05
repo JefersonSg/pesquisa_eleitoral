@@ -181,6 +181,9 @@ const SlideCandidatos = ({
                       cookieName: 'shared',
                       cookieValue: 'true'
                     });
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 2000);
                     if (navigator.share) {
                       navigator
                         .share({

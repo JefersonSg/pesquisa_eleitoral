@@ -6,7 +6,7 @@ export default function HeaderContainer() {
     <header className={styles.header_container}>
       <div className={styles.texto_header}>
         PESQUISA ELEITORAL <br />
-        SANTO ANTÔNIO DE PÁDUA
+        PALMA
       </div>
       <Image
         className={styles.logo}

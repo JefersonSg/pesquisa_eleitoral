@@ -81,19 +81,9 @@ const Formulario = ({
             <option value="" style={{ display: 'none' }}>
               selecione
             </option>
-            <option value="Santo Antônio de Pádua">
-              Santo Antônio de Pádua
-            </option>
-            <option value="Baltazar">Baltazar</option>
-            <option value="Campelo">Campelo</option>
-            <option value="Ibitiguaçu">Ibitiguaçu</option>
-            <option value="Marangatu">Marangatu</option>
-            <option value="Monte Alegre">Monte Alegre</option>
-            <option value="Paraoquena">Paraoquena</option>
-            <option value="Santa Cruz">Santa Cruz</option>
-            <option value="São Pedro de Alcântara">
-              São Pedro de Alcântara
-            </option>
+            <option value="Palma">Palma</option>
+            <option value="Itaperuçu">Itaperuçu</option>
+            <option value="Cisneiros">Cisneiros</option>
           </select>
         </div>
         <div className={styles.idade}>
