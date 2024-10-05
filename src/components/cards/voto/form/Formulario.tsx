@@ -230,6 +230,7 @@ const Formulario = ({
                 setSaved(false);
                 setIsLoading(false);
                 setAtivo('');
+                window.location.reload();
               }}
             >
               Ok
