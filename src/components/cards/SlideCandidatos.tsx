@@ -177,13 +177,10 @@ const SlideCandidatos = ({
                 <button
                   className={styles.whatsappButton}
                   onClick={(e) => {
-                    setTimeout(() => {
-                      void setCookieVoted({
-                        cookieName: 'shared',
-                        cookieValue: 'true'
-                      });
-                      window.location.reload();
-                    }, 3000);
+                    void setCookieVoted({
+                      cookieName: 'shared',
+                      cookieValue: 'true'
+                    });
                     if (navigator.share) {
                       navigator
                         .share({
